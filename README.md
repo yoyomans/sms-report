@@ -1,6 +1,6 @@
 # 📊 SMS Report
 
-A Laravel-based web application to ingest SMS data stored in a local JSON file, the application will normalise the data and store it in a relational database, it will also display a simple web report for anayaltics on the data
+A Laravel-based web application to ingest SMS data stored in a local JSON file. The application normalizes the data and stores it in a relational database. It also displays a simple web report for analytics on the data.
 
 ---
 
@@ -47,30 +47,30 @@ php artisan key:generate
 ```
 
 4. **Configure .env**
-   Update database environment values accordingly, it should just be the db config you need to change, just point it at an empty MySQL database
+   Update the database environment values accordingly. You’ll likely just need to point it at an empty MySQL database.
 
 5. **Run migrations**
-   You can find the migrations at `database/migrations` these will create the tables in the database run the below to do this:
+   You can find the migration files in database/migrations. These will create the necessary tables in the database. Run:
 
 ```bash
 php artisan migrate
 ```
 
-If you need to start fresh for whatever reason you can run
+If you need to start fresh for any reason, you can run:
 
 ```bash
 php artisan migrate:fresh
 ```
 
-**BUT WARNING THIS WILL DROP ALL TABLES SO DON'T DO IT IF YOU HAVE TABLES YOU DON'T WANT TO DROP**
+**BUT ⚠️ Warning: This will drop all existing tables — don't use it if you have data you want to keep.**
 
-6. **Run the dev server**
+6. **Run the development server**
 
 ```bash
 php artisan serve
 ```
 
-You should be able to go to 127.0.0.1 to see an empty report
+Visit http://127.0.0.1:8000 in your browser to view the (initially empty) report.
 
 7. **Ingest the data**
    Running the below will ingest the JSON found at `storage/data/messages.json` this takes a while so go make yourself a tea or coffee you can watch the progress by viewing the messages table in the database but it takes approx 15-20minutes
@@ -80,7 +80,7 @@ php artisan db:seed
 ```
 
 8. **Tests**
-   I only wrote tests for the traits as that is all time allowed for you can run the tests by running
+   Tests were written primarily for the traits due to time constraints. You can run the tests with:
 
 ```bash
 ./vendor/bin/pest
