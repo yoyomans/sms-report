@@ -1,4 +1,7 @@
 *
+!.gitignore
+!data/
+!data/messages.json
 !private/
 !public/
 !.gitignore
